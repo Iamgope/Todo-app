@@ -28,6 +28,7 @@
                     <ul>
                     {this.state.tasks.map((task,i)=>
                      <li key={i}>
+                     <button onClick={()=>this.deleteTask(i)}>Delete</button>
                         {task}
                      </li>
                     )}
@@ -35,6 +36,9 @@
                           <div>
                               <input onChange={this.inputHandler} value={this.state.input}/>
                              <button onClick={this.addTask} > Add Task</button>
+                           </div>
+                           <div>
+                           total number of tasks :{this.state.tasks.length}
                            </div>
                     </div>
                 );
@@ -49,6 +53,15 @@
              tasks:[...state.tasks,state.input],
              input:""
             }));
+        }
+        deleteTask=(index)=>{
+            this.setState(state=>{
+                const tasks = [...state.tasks];
+                tasks.splice(index,1);
+                return{
+                    tasks:tasks
+                };
+            });
         }
 
         }
