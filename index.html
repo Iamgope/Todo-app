@@ -23,7 +23,7 @@
             }
             render(){
                 return(
-                    <div>
+                    <div class="container">
                     <h1> Tasks</h1>
                     <ul>
                     {this.state.tasks.map((task,i)=>
@@ -48,11 +48,21 @@
             input:event.target.value
             });
         }
+       // addTask=()=>{
+         //   this.setState(state=>({
+        //     tasks:[...state.tasks,state.input],
+          //   input:""
+           // }));
+        //}
         addTask=()=>{
-            this.setState(state=>({
-             tasks:[...state.tasks,state.input],
-             input:""
-            }));
+            this.setState(state=>{
+                const input= state.input;
+                if(input.length!=0){
+                    return{ tasks:[...state.tasks,state.input],
+             input:""};
+                }
+
+            });
         }
         deleteTask=(index)=>{
             this.setState(state=>{

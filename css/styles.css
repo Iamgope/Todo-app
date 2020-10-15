@@ -1,0 +1,10 @@
+.container{
+    text-align: center;
+    font: 200 3em/1 "Oswald", sans-serif;
+    letter-spacing: -2;
+  	padding: .25em 0 .325em;
+	display: block;
+	margin: 0 auto;
+      text-shadow: 0 0 80px rgba(255,255,255,.5);
+     
+}
