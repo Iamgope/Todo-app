@@ -24,7 +24,7 @@
             render(){
                 return(
                     <div class="container">
-                    <h1> Tasks</h1>
+                    <h1 class="h1"> Tasks</h1>
                     <ul>
                     {this.state.tasks.map((task,i)=>
                      <li key={i}>
@@ -34,7 +34,7 @@
                     )}
                     </ul>
                           <div>
-                              <input onChange={this.inputHandler} value={this.state.input}/>
+                              <input class="input" onChange={this.inputHandler} value={this.state.input}/>
                              <button onClick={this.addTask} > Add Task</button>
                            </div>
                            <div>
